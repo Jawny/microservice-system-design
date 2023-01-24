@@ -1,0 +1,549 @@
+* 
+* ==> Audit <==
+* |--------------|----------------|----------|------------|---------|---------------------|---------------------|
+|   Command    |      Args      | Profile  |    User    | Version |     Start Time      |      End Time       |
+|--------------|----------------|----------|------------|---------|---------------------|---------------------|
+| start        |                | minikube | johnnyliao | v1.28.0 | 21 Jan 23 16:00 PST |                     |
+| start        |                | minikube | johnnyliao | v1.28.0 | 21 Jan 23 16:00 PST | 21 Jan 23 16:03 PST |
+| update-check |                | minikube | johnnyliao | v1.28.0 | 21 Jan 23 17:18 PST | 21 Jan 23 17:18 PST |
+| start        |                | minikube | johnnyliao | v1.28.0 | 21 Jan 23 17:27 PST | 21 Jan 23 17:27 PST |
+| update-check |                | minikube | johnnyliao | v1.28.0 | 23 Jan 23 15:03 PST | 23 Jan 23 15:03 PST |
+| start        |                | minikube | johnnyliao | v1.28.0 | 23 Jan 23 17:37 PST |                     |
+| addons       | list           | minikube | johnnyliao | v1.28.0 | 23 Jan 23 19:24 PST | 23 Jan 23 19:24 PST |
+| addons       | enable ingress | minikube | johnnyliao | v1.28.0 | 23 Jan 23 19:25 PST |                     |
+|--------------|----------------|----------|------------|---------|---------------------|---------------------|
+
+* 
+* ==> Last Start <==
+* Log file created at: 2023/01/23 17:37:06
+Running on machine: Johnnys-MacBook-Air-10
+Binary: Built with gc go1.19.3 for darwin/arm64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0123 17:37:06.258800   39518 out.go:296] Setting OutFile to fd 1 ...
+I0123 17:37:06.259208   39518 out.go:348] isatty.IsTerminal(1) = true
+I0123 17:37:06.259210   39518 out.go:309] Setting ErrFile to fd 2...
+I0123 17:37:06.259213   39518 out.go:348] isatty.IsTerminal(2) = true
+I0123 17:37:06.259547   39518 root.go:334] Updating PATH: /Users/johnnyliao/.minikube/bin
+W0123 17:37:06.259873   39518 root.go:311] Error reading config file at /Users/johnnyliao/.minikube/config/config.json: open /Users/johnnyliao/.minikube/config/config.json: no such file or directory
+I0123 17:37:06.260411   39518 out.go:303] Setting JSON to false
+I0123 17:37:06.281627   39518 start.go:116] hostinfo: {"hostname":"Johnnys-MacBook-Air-10.local","uptime":584674,"bootTime":1673939552,"procs":419,"os":"darwin","platform":"darwin","platformFamily":"Standalone Workstation","platformVersion":"12.5","kernelVersion":"21.6.0","kernelArch":"arm64","virtualizationSystem":"","virtualizationRole":"","hostId":"b88cdc2c-1c1b-5cd3-8c90-ddeccca35649"}
+W0123 17:37:06.281727   39518 start.go:124] gopshost.Virtualization returned error: not implemented yet
+I0123 17:37:06.300400   39518 out.go:177] 😄  minikube v1.28.0 on Darwin 12.5 (arm64)
+I0123 17:37:06.339510   39518 notify.go:220] Checking for updates...
+I0123 17:37:06.340197   39518 config.go:180] Loaded profile config "minikube": Driver=docker, ContainerRuntime=docker, KubernetesVersion=v1.25.3
+I0123 17:37:06.341165   39518 driver.go:365] Setting default libvirt URI to qemu:///system
+W0123 17:37:06.652097   39518 docker.go:113] docker version returned error: exit status 1
+I0123 17:37:06.670374   39518 out.go:177] ✨  Using the docker driver based on existing profile
+I0123 17:37:06.706191   39518 start.go:282] selected driver: docker
+I0123 17:37:06.706195   39518 start.go:808] validating driver "docker" against &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.36@sha256:8debc1b6a335075c5f99bfbf131b4f5566f68c6500dc5991817832e55fcc9456 Memory:2200 CPUs:2 DiskSize:20000 VMDriver: Driver:docker HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:0 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.25.3 ClusterName:minikube Namespace:default APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin: FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI: NodeIP: NodePort:8443 NodeName:} Nodes:[{Name: IP:192.168.49.2 Port:8443 KubernetesVersion:v1.25.3 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[ambassador:false auto-pause:false cloud-spanner:false csi-hostpath-driver:false dashboard:false default-storageclass:true efk:false freshpod:false gcp-auth:false gvisor:false headlamp:false helm-tiller:false inaccel:false ingress:false ingress-dns:false istio:false istio-provisioner:false kong:false kubevirt:false logviewer:false metallb:false metrics-server:false nvidia-driver-installer:false nvidia-gpu-device-plugin:false olm:false pod-security-policy:false portainer:false registry:false registry-aliases:false registry-creds:false storage-provisioner:true storage-provisioner-gluster:false volumesnapshots:false] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/Users:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath:/opt/socket_vmnet/bin/socket_vmnet_client SocketVMnetPath:/var/run/socket_vmnet}
+I0123 17:37:06.707219   39518 start.go:819] status for docker: {Installed:true Healthy:false Running:true NeedsImprovement:false Error:"docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Error response from daemon: Bad response from Docker engine Reason:PROVIDER_DOCKER_VERSION_EXIT_1 Fix: Doc:https://minikube.sigs.k8s.io/docs/drivers/docker/ Version:}
+I0123 17:37:06.725196   39518 out.go:177] 
+W0123 17:37:06.743485   39518 out.go:239] 💣  Exiting due to PROVIDER_DOCKER_VERSION_EXIT_1: "docker version --format -" exit status 1: Error response from daemon: Bad response from Docker engine
+W0123 17:37:06.743548   39518 out.go:239] 📘  Documentation: https://minikube.sigs.k8s.io/docs/drivers/docker/
+I0123 17:37:06.761195   39518 out.go:177] 
+
+* 
+* ==> Docker <==
+* -- Logs begin at Tue 2023-01-24 01:52:45 UTC, end at Tue 2023-01-24 03:41:59 UTC. --
+Jan 24 01:52:45 minikube systemd[1]: Starting Docker Application Container Engine...
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.543549377Z" level=info msg="Starting up"
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.548535877Z" level=info msg="parsed scheme: \"unix\"" module=grpc
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.548552211Z" level=info msg="scheme \"unix\" not registered, fallback to default scheme" module=grpc
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.548570086Z" level=info msg="ccResolverWrapper: sending update to cc: {[{unix:///run/containerd/containerd.sock  <nil> 0 <nil>}] <nil> <nil>}" module=grpc
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.548579127Z" level=info msg="ClientConn switching balancer to \"pick_first\"" module=grpc
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.552539127Z" level=info msg="parsed scheme: \"unix\"" module=grpc
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.552552627Z" level=info msg="scheme \"unix\" not registered, fallback to default scheme" module=grpc
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.552561086Z" level=info msg="ccResolverWrapper: sending update to cc: {[{unix:///run/containerd/containerd.sock  <nil> 0 <nil>}] <nil> <nil>}" module=grpc
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.552566461Z" level=info msg="ClientConn switching balancer to \"pick_first\"" module=grpc
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.566340211Z" level=info msg="[graphdriver] using prior storage driver: overlay2"
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.602603877Z" level=info msg="Loading containers: start."
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.800015211Z" level=info msg="Removing stale sandbox 384794a22bac18d065e556f30bae291c6fc293f16ca631bc4ed684f77ec07459 (f3688cf9b7993aed73c57cf84372e807e2453d83193ddcaf01f5151c51645efe)"
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.802079044Z" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint f7ae44dde38ec865eb4d7c11a325fba9b2bed50e7a5b2f77992eb78d05001978 31d2c6fcdc7c67f9e87e55201fd5ebf0072652d21d0bc26c5cb3f90b9dea847b], retrying...."
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.866129836Z" level=info msg="Removing stale sandbox 600fbc31e8ba38d046e90a993518c377f3829009dbd9de904005d09e4e59bd39 (9cb6cfac7692fddc3f03c43610c0a58eff0b3405a8035401a6608637f4378e90)"
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.868459169Z" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint dac3b00df73ee1a03a0c7570aa07a8454f4acf1df7809483b44e71c5276114d8 8b0a0dcd9d48171ec3e360073e112f2224b3309105b43c227e6212cbe1cef7e0], retrying...."
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.927821752Z" level=info msg="Removing stale sandbox bb1be5b67281b23f2b25ccf180e7cba6c5e207bfbd3582cef0c4f22d535da72a (9a917b42cb6acbf0d393d491a00bc326403ad63fcc02a5cb5d8d3f80962d4a21)"
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.928718211Z" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint f7ae44dde38ec865eb4d7c11a325fba9b2bed50e7a5b2f77992eb78d05001978 308368cccff126baa42f7d3d90ff98aad52455fd7b1fcb3949b9bb42569eb9de], retrying...."
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.986651919Z" level=info msg="Removing stale sandbox f745912bd20b4d45fb9323a0201348733dd12ceece2d27a2fbc221693983981e (dd10363d58db28a6a4905499112b0955cf1ca52304e241844b691bb75fac6405)"
+Jan 24 01:52:45 minikube dockerd[127]: time="2023-01-24T01:52:45.988870627Z" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint dac3b00df73ee1a03a0c7570aa07a8454f4acf1df7809483b44e71c5276114d8 d76c1a7feba5328e58dd77662019390e3c30442735f35f97cee06879ca86f413], retrying...."
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.047995378Z" level=info msg="Removing stale sandbox 0103bd7aa889d1a36f15c3889bab49348c827c3270c91e0d18e3a54bd3e15840 (533fab64d482d2301fb664f12d26675f15c78e92ab8716b5fc4be8ecbfb51de9)"
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.056693336Z" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint f7ae44dde38ec865eb4d7c11a325fba9b2bed50e7a5b2f77992eb78d05001978 6e2c3a6165aad2438e5e5d2098c55370e67c57d82dddc3b1db0e0230088175e9], retrying...."
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.115090378Z" level=info msg="Removing stale sandbox 64459c940024141a8fe965373332259c7d7f873d3f87862cf4aa1e8930e55c1f (a3f99007b6a6bc94e11e4778ebf155697e5e6a2c3498ffe5de566bb3f911866e)"
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.115971128Z" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint f7ae44dde38ec865eb4d7c11a325fba9b2bed50e7a5b2f77992eb78d05001978 131fbfd67a67329199fd98fc9f7f7b41e1bcff9668a4705829fe14443ba315c2], retrying...."
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.176018128Z" level=info msg="Removing stale sandbox 8794b3988b2fd030a4ea31936a700a7b7282f26388ccc03b6da331d4536fe21b (1aaf28223270deac73acbd8caf833f6e06d6fa1bd07f97b649e37dcf3d48e671)"
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.178314753Z" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint dac3b00df73ee1a03a0c7570aa07a8454f4acf1df7809483b44e71c5276114d8 7c925b286a61498a9c2f52f272e68f5d68bf55ea75a6477f0183c0e2587fbc01], retrying...."
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.239580461Z" level=info msg="Removing stale sandbox f1bad16f3fd0f3ad934a8796aaa43afcfacfdcd6467ef412d87024bffe74154e (596e001e162d8f8bffc571e13828e5849028a0ec20e566dc48b3a4b8996f4d09)"
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.240634586Z" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint f7ae44dde38ec865eb4d7c11a325fba9b2bed50e7a5b2f77992eb78d05001978 94b048c220f4774327eb3cc2ab03e41499b2ed29b5c494770feab741fe2e9cae], retrying...."
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.300042711Z" level=info msg="Removing stale sandbox 17298cf35ce0672255bc0b33f1c905e7d927015e058535117826fad2ab011557 (5fd1c714d291b9a0acfa7a26120bd1dd4e12fc2e77bf4015e6b195919fad761c)"
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.301148878Z" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint f7ae44dde38ec865eb4d7c11a325fba9b2bed50e7a5b2f77992eb78d05001978 bbac23016ba4402f42adf981c6dfa40128b9981f43c2d1732eb87a83cf5c9952], retrying...."
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.317525503Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.348738294Z" level=info msg="Loading containers: done."
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.378351711Z" level=info msg="Docker daemon" commit=03df974 graphdriver(s)=overlay2 version=20.10.20
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.378474419Z" level=info msg="Daemon has completed initialization"
+Jan 24 01:52:46 minikube systemd[1]: Started Docker Application Container Engine.
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.403830544Z" level=info msg="API listen on [::]:2376"
+Jan 24 01:52:46 minikube dockerd[127]: time="2023-01-24T01:52:46.406777794Z" level=info msg="API listen on /var/run/docker.sock"
+
+* 
+* ==> container status <==
+* CONTAINER           IMAGE                                                                                        CREATED             STATE               NAME                      ATTEMPT             POD ID
+ebf57da01ada8       jawny/auth-service@sha256:434d113198ce08f6a42ee5934711f887fa724b5fce4e24580c8bb818a1ca2958   2 days ago          Exited              auth                      0                   dd10363d58db2
+1ffa46b129f34       jawny/auth-service@sha256:434d113198ce08f6a42ee5934711f887fa724b5fce4e24580c8bb818a1ca2958   2 days ago          Exited              auth                      0                   1aaf28223270d
+4c801d2f107b9       13b15fc3e0938                                                                                2 days ago          Exited              kube-scheduler            2                   a3f99007b6a6b
+0296af97a1e6f       ba04bb24b9575                                                                                2 days ago          Exited              storage-provisioner       3                   9a917b42cb6ac
+a4a43657283db       b19406328e70d                                                                                2 days ago          Exited              coredns                   1                   9cb6cfac7692f
+a8628f987d9a5       cf6c9e4e18a33                                                                                2 days ago          Exited              kube-controller-manager   2                   5fd1c714d291b
+f9b81c6fdcb68       8e041a3b0ba8b                                                                                2 days ago          Exited              etcd                      2                   f3688cf9b7993
+96ddde3c1b599       bcc74496abfdb                                                                                2 days ago          Exited              kube-proxy                2                   533fab64d482d
+a0a793ad9efcf       12dd70322f973                                                                                2 days ago          Exited              kube-apiserver            2                   596e001e162d8
+bd17dfceff6e2       ba04bb24b9575                                                                                2 days ago          Exited              storage-provisioner       2                   9a917b42cb6ac
+fca1c02d52071       13b15fc3e0938                                                                                2 days ago          Exited              kube-scheduler            1                   0b5ea86c421d8
+5fb9c7f3be706       cf6c9e4e18a33                                                                                2 days ago          Exited              kube-controller-manager   1                   208387cef7bfc
+6a91a50653ca0       12dd70322f973                                                                                2 days ago          Exited              kube-apiserver            1                   1974fed85d9b5
+351def327115c       8e041a3b0ba8b                                                                                2 days ago          Exited              etcd                      1                   ace51afdb74cb
+7a4acb7d3224a       bcc74496abfdb                                                                                2 days ago          Exited              kube-proxy                1                   2fe111716cb79
+dca8f1a9f89e8       b19406328e70d                                                                                2 days ago          Exited              coredns                   0                   f6f5c3db713ec
+
+* 
+* ==> coredns [a4a43657283d] <==
+* [INFO] plugin/kubernetes: waiting for Kubernetes API before starting server
+[INFO] plugin/ready: Still waiting on: "kubernetes"
+[INFO] plugin/kubernetes: waiting for Kubernetes API before starting server
+[INFO] plugin/kubernetes: waiting for Kubernetes API before starting server
+[INFO] plugin/ready: Still waiting on: "kubernetes"
+[INFO] plugin/kubernetes: waiting for Kubernetes API before starting server
+[INFO] plugin/kubernetes: waiting for Kubernetes API before starting server
+[INFO] plugin/ready: Still waiting on: "kubernetes"
+[INFO] plugin/kubernetes: waiting for Kubernetes API before starting server
+.:53
+[INFO] plugin/reload: Running configuration SHA512 = a1b5920ef1e8e10875eeec3214b810e7e404fdaf6cfe53f31cc42ae1e9ba5884ecf886330489b6b02fba5b37a31406fcb402b2501c7ab0318fc890d74b6fae55
+CoreDNS-1.9.3
+linux/arm64, go1.18.2, 45b0a11
+[WARNING] plugin/health: Local health request to "http://:8080/health" took more than 1s: 1.028229167s
+[WARNING] plugin/health: Local health request to "http://:8080/health" took more than 1s: 1.553767126s
+[WARNING] plugin/health: Local health request to "http://:8080/health" took more than 1s: 2.91197921s
+[WARNING] plugin/health: Local health request to "http://:8080/health" took more than 1s: 1.279890334s
+[WARNING] plugin/health: Local health request to "http://:8080/health" failed: Get "http://:8080/health": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[WARNING] plugin/health: Local health request to "http://:8080/health" took more than 1s: 1.165047s
+[WARNING] plugin/health: Local health request to "http://:8080/health" took more than 1s: 1.25444425s
+[WARNING] plugin/health: Local health request to "http://:8080/health" took more than 1s: 1.077550875s
+
+* 
+* ==> coredns [dca8f1a9f89e] <==
+* [INFO] plugin/ready: Still waiting on: "kubernetes"
+.:53
+[INFO] plugin/reload: Running configuration SHA512 = a1b5920ef1e8e10875eeec3214b810e7e404fdaf6cfe53f31cc42ae1e9ba5884ecf886330489b6b02fba5b37a31406fcb402b2501c7ab0318fc890d74b6fae55
+CoreDNS-1.9.3
+linux/arm64, go1.18.2, 45b0a11
+[INFO] SIGTERM: Shutting down servers then terminating
+[INFO] plugin/health: Going into lameduck mode for 5s
+
+* 
+* ==> describe nodes <==
+* 
+* ==> dmesg <==
+* [Jan24 01:52] KASLR disabled due to lack of seed
+[  +0.083773] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[  +0.012020] the cryptoloop driver has been deprecated and will be removed in in Linux 5.16
+[  +0.009130] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[  +4.401978] grpcfuse: loading out-of-tree module taints kernel.
+[Jan24 03:14] hrtimer: interrupt took 8643708 ns
+
+* 
+* ==> etcd [351def327115] <==
+* {"level":"info","ts":"2023-01-22T01:27:18.190Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"aec36adc501070cc became candidate at term 3"}
+{"level":"info","ts":"2023-01-22T01:27:18.190Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"aec36adc501070cc received MsgVoteResp from aec36adc501070cc at term 3"}
+{"level":"info","ts":"2023-01-22T01:27:18.190Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"aec36adc501070cc became leader at term 3"}
+{"level":"info","ts":"2023-01-22T01:27:18.190Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"raft.node: aec36adc501070cc elected leader aec36adc501070cc at term 3"}
+{"level":"info","ts":"2023-01-22T01:27:18.191Z","caller":"etcdserver/server.go:2042","msg":"published local member to cluster through raft","local-member-id":"aec36adc501070cc","local-member-attributes":"{Name:minikube ClientURLs:[https://192.168.49.2:2379]}","request-path":"/0/members/aec36adc501070cc/attributes","cluster-id":"fa54960ea34d58be","publish-timeout":"7s"}
+{"level":"info","ts":"2023-01-22T01:27:18.191Z","caller":"embed/serve.go:98","msg":"ready to serve client requests"}
+{"level":"info","ts":"2023-01-22T01:27:18.191Z","caller":"etcdmain/main.go:44","msg":"notifying init daemon"}
+{"level":"info","ts":"2023-01-22T01:27:18.191Z","caller":"etcdmain/main.go:50","msg":"successfully notified init daemon"}
+{"level":"info","ts":"2023-01-22T01:27:18.192Z","caller":"embed/serve.go:98","msg":"ready to serve client requests"}
+{"level":"info","ts":"2023-01-22T01:27:18.193Z","caller":"embed/serve.go:188","msg":"serving client traffic securely","address":"127.0.0.1:2379"}
+{"level":"info","ts":"2023-01-22T01:27:18.196Z","caller":"embed/serve.go:188","msg":"serving client traffic securely","address":"192.168.49.2:2379"}
+{"level":"warn","ts":"2023-01-22T01:27:18.198Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60184","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.199Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60160","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.200Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60164","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.201Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60190","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.203Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60168","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.205Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60188","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.205Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60354","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.206Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60378","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.207Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60384","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.207Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60380","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.208Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60396","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.209Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60404","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.209Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60412","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.211Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60468","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.213Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60232","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.213Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60348","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.214Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60230","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.215Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60208","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.216Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60238","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.217Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60256","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.217Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60264","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.219Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60272","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.219Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60280","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.220Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60294","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.222Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60310","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.222Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60282","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.222Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60240","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.223Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60318","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.224Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60320","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.224Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60334","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.224Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60346","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.225Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60422","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.226Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60500","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.227Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60438","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.228Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60458","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.228Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60486","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.267Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60482","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.270Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60290","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.273Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60220","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.274Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60366","server-name":"","error":"EOF"}
+{"level":"warn","ts":"2023-01-22T01:27:18.276Z","caller":"embed/config_logging.go:169","msg":"rejected connection","remote-addr":"127.0.0.1:60448","server-name":"","error":"EOF"}
+{"level":"info","ts":"2023-01-22T01:27:20.279Z","caller":"osutil/interrupt_unix.go:64","msg":"received signal; shutting down","signal":"terminated"}
+{"level":"info","ts":"2023-01-22T01:27:20.280Z","caller":"embed/etcd.go:368","msg":"closing etcd server","name":"minikube","data-dir":"/var/lib/minikube/etcd","advertise-peer-urls":["https://192.168.49.2:2380"],"advertise-client-urls":["https://192.168.49.2:2379"]}
+WARNING: 2023/01/22 01:27:20 [core] grpc: addrConn.createTransport failed to connect to {192.168.49.2:2379 192.168.49.2:2379 <nil> 0 <nil>}. Err: connection error: desc = "transport: Error while dialing dial tcp 192.168.49.2:2379: connect: connection refused". Reconnecting...
+WARNING: 2023/01/22 01:27:20 [core] grpc: addrConn.createTransport failed to connect to {127.0.0.1:2379 127.0.0.1:2379 <nil> 0 <nil>}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused". Reconnecting...
+{"level":"info","ts":"2023-01-22T01:27:20.412Z","caller":"etcdserver/server.go:1453","msg":"skipped leadership transfer for single voting member cluster","local-member-id":"aec36adc501070cc","current-leader-member-id":"aec36adc501070cc"}
+{"level":"info","ts":"2023-01-22T01:27:20.415Z","caller":"embed/etcd.go:563","msg":"stopping serving peer traffic","address":"192.168.49.2:2380"}
+{"level":"info","ts":"2023-01-22T01:27:20.419Z","caller":"embed/etcd.go:568","msg":"stopped serving peer traffic","address":"192.168.49.2:2380"}
+{"level":"info","ts":"2023-01-22T01:27:20.419Z","caller":"embed/etcd.go:370","msg":"closed etcd server","name":"minikube","data-dir":"/var/lib/minikube/etcd","advertise-peer-urls":["https://192.168.49.2:2380"],"advertise-client-urls":["https://192.168.49.2:2379"]}
+
+* 
+* ==> etcd [f9b81c6fdcb6] <==
+* {"level":"info","ts":"2023-01-23T21:28:29.184Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":82072}
+{"level":"info","ts":"2023-01-23T21:28:29.196Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":82072,"took":"9.552583ms"}
+{"level":"info","ts":"2023-01-23T21:33:29.196Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":82281}
+{"level":"info","ts":"2023-01-23T21:33:29.204Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":82281,"took":"4.636958ms"}
+{"level":"info","ts":"2023-01-23T21:38:29.211Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":82490}
+{"level":"info","ts":"2023-01-23T21:38:29.221Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":82490,"took":"8.204292ms"}
+{"level":"info","ts":"2023-01-23T21:43:29.221Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":82700}
+{"level":"info","ts":"2023-01-23T21:43:29.232Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":82700,"took":"9.639542ms"}
+{"level":"info","ts":"2023-01-23T21:48:29.230Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":82909}
+{"level":"info","ts":"2023-01-23T21:48:29.240Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":82909,"took":"8.221917ms"}
+{"level":"info","ts":"2023-01-23T21:53:29.238Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":83118}
+{"level":"info","ts":"2023-01-23T21:53:29.242Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":83118,"took":"3.081375ms"}
+{"level":"info","ts":"2023-01-23T21:58:29.247Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":83328}
+{"level":"info","ts":"2023-01-23T21:58:29.249Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":83328,"took":"1.604959ms"}
+{"level":"info","ts":"2023-01-23T22:03:29.251Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":83537}
+{"level":"info","ts":"2023-01-23T22:03:29.260Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":83537,"took":"8.155792ms"}
+{"level":"info","ts":"2023-01-23T22:08:29.262Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":83745}
+{"level":"info","ts":"2023-01-23T22:08:29.264Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":83745,"took":"1.641542ms"}
+{"level":"info","ts":"2023-01-23T22:13:29.267Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":83955}
+{"level":"info","ts":"2023-01-23T22:13:29.271Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":83955,"took":"2.988542ms"}
+{"level":"info","ts":"2023-01-23T22:18:29.275Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":84165}
+{"level":"info","ts":"2023-01-23T22:18:29.283Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":84165,"took":"4.283375ms"}
+{"level":"info","ts":"2023-01-23T22:23:29.280Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":84374}
+{"level":"info","ts":"2023-01-23T22:23:29.286Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":84374,"took":"4.909375ms"}
+{"level":"info","ts":"2023-01-23T22:28:29.285Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":84584}
+{"level":"info","ts":"2023-01-23T22:28:29.287Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":84584,"took":"1.462708ms"}
+{"level":"info","ts":"2023-01-23T22:33:29.290Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":84793}
+{"level":"info","ts":"2023-01-23T22:33:29.298Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":84793,"took":"7.509834ms"}
+{"level":"info","ts":"2023-01-23T22:38:29.295Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":85003}
+{"level":"info","ts":"2023-01-23T22:38:29.298Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":85003,"took":"2.568ms"}
+{"level":"warn","ts":"2023-01-23T22:39:34.832Z","caller":"etcdserver/util.go:166","msg":"apply request took too long","took":"109.628334ms","expected-duration":"100ms","prefix":"read-only range ","request":"key:\"/registry/namespaces/default\" ","response":"range_response_count:1 size:342"}
+{"level":"info","ts":"2023-01-23T22:39:34.854Z","caller":"traceutil/trace.go:171","msg":"trace[1419010925] range","detail":"{range_begin:/registry/namespaces/default; range_end:; response_count:1; response_revision:85257; }","duration":"134.0605ms","start":"2023-01-23T22:39:34.720Z","end":"2023-01-23T22:39:34.854Z","steps":["trace[1419010925] 'range keys from in-memory index tree'  (duration: 102.046875ms)"],"step_count":1}
+{"level":"info","ts":"2023-01-23T22:42:29.943Z","caller":"etcdserver/server.go:1383","msg":"triggering snapshot","local-member-id":"aec36adc501070cc","local-member-applied-index":110011,"local-member-snapshot-index":100010,"local-member-snapshot-count":10000}
+{"level":"info","ts":"2023-01-23T22:42:29.965Z","caller":"etcdserver/server.go:2394","msg":"saved snapshot","snapshot-index":110011}
+{"level":"info","ts":"2023-01-23T22:42:29.966Z","caller":"etcdserver/server.go:2424","msg":"compacted Raft logs","compact-index":105011}
+{"level":"info","ts":"2023-01-23T22:42:34.421Z","caller":"fileutil/purge.go:77","msg":"purged","path":"/var/lib/minikube/etcd/member/snap/0000000000000004-000000000000ea66.snap"}
+{"level":"info","ts":"2023-01-23T22:43:29.304Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":85212}
+{"level":"info","ts":"2023-01-23T22:43:29.308Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":85212,"took":"2.858292ms"}
+{"level":"info","ts":"2023-01-23T22:48:29.311Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":85421}
+{"level":"info","ts":"2023-01-23T22:48:29.316Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":85421,"took":"4.0365ms"}
+{"level":"info","ts":"2023-01-23T22:53:29.316Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":85632}
+{"level":"info","ts":"2023-01-23T22:53:29.319Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":85632,"took":"2.287666ms"}
+{"level":"info","ts":"2023-01-23T22:58:29.324Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":85841}
+{"level":"info","ts":"2023-01-23T22:58:29.332Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":85841,"took":"7.697375ms"}
+{"level":"info","ts":"2023-01-23T23:03:29.328Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":86051}
+{"level":"info","ts":"2023-01-23T23:03:29.331Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":86051,"took":"2.163458ms"}
+{"level":"info","ts":"2023-01-23T23:08:29.332Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":86261}
+{"level":"info","ts":"2023-01-23T23:08:29.334Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":86261,"took":"1.525667ms"}
+{"level":"info","ts":"2023-01-23T23:13:29.337Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":86470}
+{"level":"info","ts":"2023-01-23T23:13:29.340Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":86470,"took":"1.705708ms"}
+{"level":"info","ts":"2023-01-23T23:18:29.344Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":86680}
+{"level":"info","ts":"2023-01-23T23:18:29.347Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":86680,"took":"2.534917ms"}
+{"level":"info","ts":"2023-01-23T23:23:29.364Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":86890}
+{"level":"info","ts":"2023-01-23T23:23:29.367Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":86890,"took":"1.98425ms"}
+{"level":"info","ts":"2023-01-23T23:28:29.370Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":87099}
+{"level":"info","ts":"2023-01-23T23:28:29.372Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":87099,"took":"1.937625ms"}
+{"level":"info","ts":"2023-01-23T23:33:29.377Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":87310}
+{"level":"info","ts":"2023-01-23T23:33:29.382Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":87310,"took":"3.267708ms"}
+{"level":"info","ts":"2023-01-23T23:38:29.384Z","caller":"mvcc/index.go:214","msg":"compact tree index","revision":87519}
+{"level":"info","ts":"2023-01-23T23:38:29.388Z","caller":"mvcc/kvstore_compaction.go:57","msg":"finished scheduled compaction","compact-revision":87519,"took":"3.051375ms"}
+
+* 
+* ==> kernel <==
+*  03:42:01 up  1:49,  0 users,  load average: 0.16, 0.05, 0.01
+Linux minikube 5.15.49-linuxkit #1 SMP PREEMPT Tue Sep 13 07:51:32 UTC 2022 aarch64 aarch64 aarch64 GNU/Linux
+PRETTY_NAME="Ubuntu 20.04.5 LTS"
+
+* 
+* ==> kube-apiserver [6a91a50653ca] <==
+*   "BalancerAttributes": null,
+  "Type": 0,
+  "Metadata": null
+}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused"
+W0122 01:27:30.238010       1 logging.go:59] [core] [Channel #169 SubChannel #170] grpc: addrConn.createTransport failed to connect to {
+  "Addr": "127.0.0.1:2379",
+  "ServerName": "127.0.0.1",
+  "Attributes": null,
+  "BalancerAttributes": null,
+  "Type": 0,
+  "Metadata": null
+}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused"
+W0122 01:27:30.406344       1 logging.go:59] [core] [Channel #4 SubChannel #5] grpc: addrConn.createTransport failed to connect to {
+  "Addr": "127.0.0.1:2379",
+  "ServerName": "127.0.0.1",
+  "Attributes": null,
+  "BalancerAttributes": null,
+  "Type": 0,
+  "Metadata": null
+}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused"
+W0122 01:27:30.406344       1 logging.go:59] [core] [Channel #175 SubChannel #176] grpc: addrConn.createTransport failed to connect to {
+  "Addr": "127.0.0.1:2379",
+  "ServerName": "127.0.0.1",
+  "Attributes": null,
+  "BalancerAttributes": null,
+  "Type": 0,
+  "Metadata": null
+}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused"
+W0122 01:27:30.455604       1 logging.go:59] [core] [Channel #142 SubChannel #143] grpc: addrConn.createTransport failed to connect to {
+  "Addr": "127.0.0.1:2379",
+  "ServerName": "127.0.0.1",
+  "Attributes": null,
+  "BalancerAttributes": null,
+  "Type": 0,
+  "Metadata": null
+}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused"
+W0122 01:27:30.486270       1 logging.go:59] [core] [Channel #118 SubChannel #119] grpc: addrConn.createTransport failed to connect to {
+  "Addr": "127.0.0.1:2379",
+  "ServerName": "127.0.0.1",
+  "Attributes": null,
+  "BalancerAttributes": null,
+  "Type": 0,
+  "Metadata": null
+}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused"
+W0122 01:27:30.496170       1 logging.go:59] [core] [Channel #109 SubChannel #110] grpc: addrConn.createTransport failed to connect to {
+  "Addr": "127.0.0.1:2379",
+  "ServerName": "127.0.0.1",
+  "Attributes": null,
+  "BalancerAttributes": null,
+  "Type": 0,
+  "Metadata": null
+}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused"
+W0122 01:27:30.524589       1 logging.go:59] [core] [Channel #46 SubChannel #47] grpc: addrConn.createTransport failed to connect to {
+  "Addr": "127.0.0.1:2379",
+  "ServerName": "127.0.0.1",
+  "Attributes": null,
+  "BalancerAttributes": null,
+  "Type": 0,
+  "Metadata": null
+}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused"
+
+* 
+* ==> kube-apiserver [a0a793ad9efc] <==
+* Trace[675373808]: [6.296004003s] [6.296004003s] END
+E0122 08:55:51.687627       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0122 08:55:51.687523       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0122 14:01:54.515916       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0122 14:01:54.515919       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0122 15:05:45.569519       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0122 15:05:45.569715       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0122 17:04:31.416729       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0122 17:04:31.416924       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0122 18:54:12.442257       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0122 18:54:12.442393       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+I0122 19:04:17.923090       1 trace.go:205] Trace[312439427]: "GuaranteedUpdate etcd3" audit-id:2eb338ab-51ff-4831-8928-aaf45d611d2c,key:/leases/kube-node-lease/minikube,type:*coordination.Lease (22-Jan-2023 19:04:11.781) (total time: 6056ms):
+Trace[312439427]: ---"Txn call finished" err:<nil> 6043ms (19:04:17.837)
+Trace[312439427]: [6.056755295s] [6.056755295s] END
+I0122 19:04:18.024448       1 trace.go:205] Trace[366546209]: "GuaranteedUpdate etcd3" audit-id:8b46dd2f-48b3-4c9e-aad2-dab1e86cdf6e,key:/services/endpoints/kube-system/k8s.io-minikube-hostpath,type:*core.Endpoints (22-Jan-2023 19:04:11.420) (total time: 6603ms):
+Trace[366546209]: ---"About to Encode" 361ms (19:04:11.782)
+Trace[366546209]: ---"Txn call finished" err:<nil> 6240ms (19:04:18.024)
+Trace[366546209]: [6.60347417s] [6.60347417s] END
+I0122 19:04:18.043158       1 trace.go:205] Trace[2007368795]: "Update" url:/api/v1/namespaces/kube-system/endpoints/k8s.io-minikube-hostpath,user-agent:storage-provisioner/v0.0.0 (linux/arm64) kubernetes/$Format,audit-id:8b46dd2f-48b3-4c9e-aad2-dab1e86cdf6e,client:192.168.49.2,accept:application/json, */*,protocol:HTTP/2.0 (22-Jan-2023 19:04:11.419) (total time: 6607ms):
+Trace[2007368795]: ---"Write to database call finished" len:1354,err:<nil> 6606ms (19:04:18.026)
+Trace[2007368795]: [6.607735629s] [6.607735629s] END
+I0122 19:04:18.124067       1 trace.go:205] Trace[1358253628]: "Update" url:/apis/coordination.k8s.io/v1/namespaces/kube-node-lease/leases/minikube,user-agent:kubelet/v1.25.3 (linux/arm64) kubernetes/434bfd8,audit-id:2eb338ab-51ff-4831-8928-aaf45d611d2c,client:192.168.49.2,accept:application/vnd.kubernetes.protobuf,application/json,protocol:HTTP/2.0 (22-Jan-2023 19:04:11.779) (total time: 6344ms):
+Trace[1358253628]: ---"Write to database call finished" len:477,err:<nil> 6159ms (19:04:17.939)
+Trace[1358253628]: ---"Writing http response done" 183ms (19:04:18.123)
+Trace[1358253628]: [6.344449586s] [6.344449586s] END
+I0122 19:04:18.421726       1 trace.go:205] Trace[570079290]: "Get" url:/api/v1/namespaces/default,user-agent:kube-apiserver/v1.25.3 (linux/arm64) kubernetes/434bfd8,audit-id:cfad1f30-edfb-4a73-adc5-4d4d4bf359de,client:127.0.0.1,accept:application/vnd.kubernetes.protobuf, */*,protocol:HTTP/2.0 (22-Jan-2023 19:04:17.242) (total time: 1178ms):
+Trace[570079290]: ---"About to write a response" 1114ms (19:04:18.356)
+Trace[570079290]: [1.178918584s] [1.178918584s] END
+E0122 23:14:32.462095       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0122 23:14:32.462088       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 01:17:51.478065       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 01:17:51.478208       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 02:19:45.181285       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 02:19:45.188626       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 03:21:52.506500       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 03:21:52.506499       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 04:23:35.487963       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 04:23:35.488244       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 05:33:54.574305       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 05:33:54.574305       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 06:41:16.359078       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 06:41:16.359111       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 09:18:55.429230       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 09:18:55.429224       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 10:20:31.821647       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 10:20:31.821736       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 12:10:26.418275       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+E0123 12:10:26.418335       1 authentication.go:63] "Unable to authenticate the request" err="[invalid bearer token, service account token has expired]"
+I0123 20:49:34.559037       1 trace.go:205] Trace[1069514772]: "Get" url:/api/v1/namespaces/kube-system/endpoints/k8s.io-minikube-hostpath,user-agent:storage-provisioner/v0.0.0 (linux/arm64) kubernetes/$Format,audit-id:fac9497f-e56e-4aeb-b506-2427df046c3d,client:192.168.49.2,accept:application/json, */*,protocol:HTTP/2.0 (23-Jan-2023 20:49:33.761) (total time: 797ms):
+Trace[1069514772]: ---"About to write a response" 788ms (20:49:34.549)
+Trace[1069514772]: [797.038626ms] [797.038626ms] END
+I0123 20:49:34.559171       1 trace.go:205] Trace[76406601]: "Get" url:/api/v1/namespaces/default,user-agent:kube-apiserver/v1.25.3 (linux/arm64) kubernetes/434bfd8,audit-id:7d45fbc7-c896-4a94-b380-3a201da172cf,client:127.0.0.1,accept:application/vnd.kubernetes.protobuf, */*,protocol:HTTP/2.0 (23-Jan-2023 20:49:33.812) (total time: 744ms):
+Trace[76406601]: ---"About to write a response" 743ms (20:49:34.556)
+Trace[76406601]: [744.578126ms] [744.578126ms] END
+I0123 20:49:35.356388       1 trace.go:205] Trace[515726797]: "GuaranteedUpdate etcd3" audit-id:59a5d39e-787c-4929-bdd8-6e7e8f8c0fae,key:/services/endpoints/kube-system/k8s.io-minikube-hostpath,type:*core.Endpoints (23-Jan-2023 20:49:34.824) (total time: 522ms):
+Trace[515726797]: ---"Txn call finished" err:<nil> 488ms (20:49:35.344)
+Trace[515726797]: [522.721167ms] [522.721167ms] END
+I0123 20:49:35.360621       1 trace.go:205] Trace[1138655903]: "Update" url:/api/v1/namespaces/kube-system/endpoints/k8s.io-minikube-hostpath,user-agent:storage-provisioner/v0.0.0 (linux/arm64) kubernetes/$Format,audit-id:59a5d39e-787c-4929-bdd8-6e7e8f8c0fae,client:192.168.49.2,accept:application/json, */*,protocol:HTTP/2.0 (23-Jan-2023 20:49:34.822) (total time: 536ms):
+Trace[1138655903]: ---"Write to database call finished" len:1354,err:<nil> 533ms (20:49:35.357)
+Trace[1138655903]: [536.333417ms] [536.333417ms] END
+
+* 
+* ==> kube-controller-manager [5fb9c7f3be70] <==
+* I0122 01:27:19.426857       1 serving.go:348] Generated self-signed cert in-memory
+I0122 01:27:19.782620       1 controllermanager.go:178] Version: v1.25.3
+I0122 01:27:19.782675       1 controllermanager.go:180] "Golang settings" GOGC="" GOMAXPROCS="" GOTRACEBACK=""
+I0122 01:27:19.786963       1 dynamic_cafile_content.go:157] "Starting controller" name="request-header::/var/lib/minikube/certs/front-proxy-ca.crt"
+I0122 01:27:19.787230       1 dynamic_cafile_content.go:157] "Starting controller" name="client-ca-bundle::/var/lib/minikube/certs/ca.crt"
+I0122 01:27:19.787722       1 tlsconfig.go:240] "Starting DynamicServingCertificateController"
+I0122 01:27:19.787863       1 secure_serving.go:210] Serving securely on 127.0.0.1:10257
+
+* 
+* ==> kube-controller-manager [a8628f987d9a] <==
+* I0122 01:27:48.725974       1 shared_informer.go:262] Caches are synced for crt configmap
+I0122 01:27:48.774854       1 shared_informer.go:262] Caches are synced for attach detach
+I0122 01:27:48.803115       1 shared_informer.go:262] Caches are synced for resource quota
+I0122 01:27:48.808225       1 shared_informer.go:262] Caches are synced for daemon sets
+I0122 01:27:48.822846       1 shared_informer.go:262] Caches are synced for resource quota
+I0122 01:27:48.887964       1 shared_informer.go:262] Caches are synced for taint
+I0122 01:27:48.888081       1 taint_manager.go:204] "Starting NoExecuteTaintManager"
+I0122 01:27:48.888278       1 taint_manager.go:209] "Sending events to api server"
+I0122 01:27:48.889037       1 node_lifecycle_controller.go:1443] Initializing eviction metric for zone: 
+W0122 01:27:48.889149       1 node_lifecycle_controller.go:1058] Missing timestamp for Node minikube. Assuming now as a timestamp.
+I0122 01:27:48.889187       1 event.go:294] "Event occurred" object="minikube" fieldPath="" kind="Node" apiVersion="v1" type="Normal" reason="RegisteredNode" message="Node minikube event: Registered Node minikube in Controller"
+I0122 01:27:48.889203       1 node_lifecycle_controller.go:1259] Controller detected that zone  is now in state Normal.
+I0122 01:27:49.205805       1 shared_informer.go:262] Caches are synced for garbage collector
+I0122 01:27:49.240592       1 shared_informer.go:262] Caches are synced for garbage collector
+I0122 01:27:49.240681       1 garbagecollector.go:163] Garbage collector: all resource monitors have synced. Proceeding to collect garbage
+I0122 01:38:06.333309       1 event.go:294] "Event occurred" object="default/auth" fieldPath="" kind="Deployment" apiVersion="apps/v1" type="Normal" reason="ScalingReplicaSet" message="Scaled up replica set auth-6f7f7567f6 to 2"
+I0122 01:38:06.381631       1 event.go:294] "Event occurred" object="default/auth-6f7f7567f6" fieldPath="" kind="ReplicaSet" apiVersion="apps/v1" type="Normal" reason="SuccessfulCreate" message="Created pod: auth-6f7f7567f6-bsdbp"
+I0122 01:38:06.389581       1 event.go:294] "Event occurred" object="default/auth-6f7f7567f6" fieldPath="" kind="ReplicaSet" apiVersion="apps/v1" type="Normal" reason="SuccessfulCreate" message="Created pod: auth-6f7f7567f6-zmpl2"
+I0122 01:46:06.542968       1 event.go:294] "Event occurred" object="default/auth-6f7f7567f6" fieldPath="" kind="ReplicaSet" apiVersion="apps/v1" type="Normal" reason="SuccessfulCreate" message="Created pod: auth-6f7f7567f6-kmjvw"
+I0122 01:46:11.631005       1 event.go:294] "Event occurred" object="default/auth-6f7f7567f6" fieldPath="" kind="ReplicaSet" apiVersion="apps/v1" type="Normal" reason="SuccessfulCreate" message="Created pod: auth-6f7f7567f6-q8d7r"
+W0122 01:46:11.646372       1 endpointslice_controller.go:306] Error syncing endpoint slices for service "default/auth", retrying. Error: EndpointSlice informer cache is out of date
+I0122 01:46:17.555055       1 event.go:294] "Event occurred" object="default/auth-6f7f7567f6" fieldPath="" kind="ReplicaSet" apiVersion="apps/v1" type="Normal" reason="SuccessfulCreate" message="Created pod: auth-6f7f7567f6-brfrt"
+I0122 01:47:57.806058       1 event.go:294] "Event occurred" object="default/auth-6f7f7567f6" fieldPath="" kind="ReplicaSet" apiVersion="apps/v1" type="Normal" reason="SuccessfulCreate" message="Created pod: auth-6f7f7567f6-phpxd"
+I0122 01:48:03.445713       1 event.go:294] "Event occurred" object="default/auth-6f7f7567f6" fieldPath="" kind="ReplicaSet" apiVersion="apps/v1" type="Normal" reason="SuccessfulCreate" message="Created pod: auth-6f7f7567f6-nnj5z"
+W0122 03:17:46.619494       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0122 03:17:46.620490       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+E0122 05:17:50.658570       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0122 05:17:50.659569       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0122 07:32:39.375365       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0122 07:32:39.375859       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+W0122 08:55:51.697188       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0122 08:55:51.697295       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+E0122 14:01:54.519774       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0122 14:01:54.519959       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+W0122 15:05:45.573009       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0122 15:05:45.573122       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0122 17:04:31.419389       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0122 17:04:31.419733       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+E0122 18:54:12.443322       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0122 18:54:12.443323       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0122 23:14:32.465344       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0122 23:14:32.465843       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0123 01:17:51.481481       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0123 01:17:51.481571       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0123 02:19:45.184754       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0123 02:19:45.190779       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0123 03:21:52.509086       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0123 03:21:52.511733       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0123 04:23:35.491602       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0123 04:23:35.491821       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0123 05:33:54.576412       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0123 05:33:54.576672       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+W0123 06:41:16.362083       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0123 06:41:16.362479       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0123 09:18:55.431104       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0123 09:18:55.431176       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+E0123 10:20:31.823842       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+W0123 10:20:31.823873       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+W0123 12:10:26.420086       1 garbagecollector.go:754] failed to discover preferred resources: Unauthorized
+E0123 12:10:26.420193       1 resource_quota_controller.go:417] failed to discover resources: Unauthorized
+
+* 
+* ==> kube-proxy [7a4acb7d3224] <==
+* 
+* 
+* ==> kube-proxy [96ddde3c1b59] <==
+* E0122 01:27:36.267479       1 node.go:152] Failed to retrieve node info: nodes "minikube" is forbidden: User "system:serviceaccount:kube-system:kube-proxy" cannot get resource "nodes" in API group "" at the cluster scope
+I0122 01:27:37.370253       1 node.go:163] Successfully retrieved node IP: 192.168.49.2
+I0122 01:27:37.371238       1 server_others.go:138] "Detected node IP" address="192.168.49.2"
+I0122 01:27:37.371763       1 server_others.go:578] "Unknown proxy mode, assuming iptables proxy" proxyMode=""
+I0122 01:27:37.400578       1 server_others.go:206] "Using iptables Proxier"
+I0122 01:27:37.400640       1 server_others.go:213] "kube-proxy running in dual-stack mode" ipFamily=IPv4
+I0122 01:27:37.400723       1 server_others.go:214] "Creating dualStackProxier for iptables"
+I0122 01:27:37.400805       1 server_others.go:501] "Detect-local-mode set to ClusterCIDR, but no IPv6 cluster CIDR defined, , defaulting to no-op detect-local for IPv6"
+I0122 01:27:37.401208       1 proxier.go:262] "Setting route_localnet=1, use nodePortAddresses to filter loopback addresses for NodePorts to skip it https://issues.k8s.io/90259"
+I0122 01:27:37.401448       1 proxier.go:262] "Setting route_localnet=1, use nodePortAddresses to filter loopback addresses for NodePorts to skip it https://issues.k8s.io/90259"
+I0122 01:27:37.402312       1 server.go:661] "Version info" version="v1.25.3"
+I0122 01:27:37.402535       1 server.go:663] "Golang settings" GOGC="" GOMAXPROCS="" GOTRACEBACK=""
+I0122 01:27:37.403996       1 config.go:317] "Starting service config controller"
+I0122 01:27:37.405576       1 shared_informer.go:255] Waiting for caches to sync for service config
+I0122 01:27:37.404234       1 config.go:226] "Starting endpoint slice config controller"
+I0122 01:27:37.405160       1 config.go:444] "Starting node config controller"
+I0122 01:27:37.405861       1 shared_informer.go:255] Waiting for caches to sync for node config
+I0122 01:27:37.405855       1 shared_informer.go:255] Waiting for caches to sync for endpoint slice config
+I0122 01:27:37.508071       1 shared_informer.go:262] Caches are synced for service config
+I0122 01:27:37.508152       1 shared_informer.go:262] Caches are synced for endpoint slice config
+I0122 01:27:37.508152       1 shared_informer.go:262] Caches are synced for node config
+
+* 
+* ==> kube-scheduler [4c801d2f107b] <==
+* I0122 01:27:51.471613       1 serving.go:348] Generated self-signed cert in-memory
+I0122 01:27:51.654010       1 server.go:148] "Starting Kubernetes Scheduler" version="v1.25.3"
+I0122 01:27:51.654028       1 server.go:150] "Golang settings" GOGC="" GOMAXPROCS="" GOTRACEBACK=""
+I0122 01:27:51.658097       1 secure_serving.go:210] Serving securely on 127.0.0.1:10259
+I0122 01:27:51.658114       1 tlsconfig.go:240] "Starting DynamicServingCertificateController"
+I0122 01:27:51.658098       1 configmap_cafile_content.go:202] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+I0122 01:27:51.658097       1 configmap_cafile_content.go:202] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"
+I0122 01:27:51.658299       1 shared_informer.go:255] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+I0122 01:27:51.658285       1 shared_informer.go:255] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+I0122 01:27:51.658284       1 requestheader_controller.go:169] Starting RequestHeaderAuthRequestController
+I0122 01:27:51.658839       1 shared_informer.go:255] Waiting for caches to sync for RequestHeaderAuthRequestController
+I0122 01:27:51.758483       1 shared_informer.go:262] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+I0122 01:27:51.758537       1 shared_informer.go:262] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+I0122 01:27:51.759373       1 shared_informer.go:262] Caches are synced for RequestHeaderAuthRequestController
+
+* 
+* ==> kube-scheduler [fca1c02d5207] <==
+* I0122 01:27:19.018029       1 serving.go:348] Generated self-signed cert in-memory
+
+* 
+* ==> kubelet <==
+* -- Logs begin at Tue 2023-01-24 01:52:45 UTC, end at Tue 2023-01-24 03:42:02 UTC. --
+-- No entries --
+
+* 
+* ==> storage-provisioner [0296af97a1e6] <==
+* I0122 01:27:48.106518       1 storage_provisioner.go:116] Initializing the minikube storage provisioner...
+I0122 01:27:48.119008       1 storage_provisioner.go:141] Storage provisioner initialized, now starting service!
+I0122 01:27:48.119323       1 leaderelection.go:243] attempting to acquire leader lease kube-system/k8s.io-minikube-hostpath...
+I0122 01:28:05.559939       1 leaderelection.go:253] successfully acquired lease kube-system/k8s.io-minikube-hostpath
+I0122 01:28:05.562499       1 event.go:282] Event(v1.ObjectReference{Kind:"Endpoints", Namespace:"kube-system", Name:"k8s.io-minikube-hostpath", UID:"88cb04ac-15eb-46c5-8894-945e2cb01934", APIVersion:"v1", ResourceVersion:"3983", FieldPath:""}): type: 'Normal' reason: 'LeaderElection' minikube_4d13bf62-25ec-4773-a9e3-2dbc87016264 became leader
+I0122 01:28:05.571952       1 controller.go:835] Starting provisioner controller k8s.io/minikube-hostpath_minikube_4d13bf62-25ec-4773-a9e3-2dbc87016264!
+I0122 01:28:05.672715       1 controller.go:884] Started provisioner controller k8s.io/minikube-hostpath_minikube_4d13bf62-25ec-4773-a9e3-2dbc87016264!
+
+* 
+* ==> storage-provisioner [bd17dfceff6e] <==
+* I0122 01:27:32.068574       1 storage_provisioner.go:116] Initializing the minikube storage provisioner...
+F0122 01:27:32.074559       1 main.go:39] error getting server version: Get "https://10.96.0.1:443/version?timeout=32s": dial tcp 10.96.0.1:443: connect: connection refused
+
